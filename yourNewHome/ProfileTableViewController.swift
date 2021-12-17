@@ -46,7 +46,8 @@ class ProfileTableViewController: UITableViewController {
     @IBAction func settingButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func camerButtonPressed(_ sender: Any) {
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        showPictureOptions()
     }
     
     @IBAction func editButtonPressed(_ sender: Any) {
@@ -66,6 +67,8 @@ class ProfileTableViewController: UITableViewController {
     @objc func editUserData() {
         
     }
+    
+    
     
     @IBAction func typeSwitchPressed(_ sender: Any) {
     }
@@ -116,6 +119,18 @@ class ProfileTableViewController: UITableViewController {
         self.view.endEditing(false)
     }
 
-    
+    //MARK: alert controller
+    private func showPictureOptions() {
+        let alertController = UIAlertController(title: "Upload Picture", message: "Change your picture or upload more photo", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Change Portofolio", style: .default, handler: { (alert) in
+            print("change avatar")
+        }))
+        alertController.addAction(UIAlertAction(title: "Upload Picture", style: .default, handler: { (alert) in
+            print("upload pic")
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 
 }

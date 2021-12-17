@@ -162,7 +162,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="camera"/>
                                                             <connections>
-                                                                <action selector="camerButtonPressed:" destination="ra9-In-MBU" eventType="touchUpInside" id="bD8-xa-nQn"/>
+                                                                <action selector="cameraButtonPressed:" destination="ra9-In-MBU" eventType="touchUpInside" id="9ug-LZ-hfK"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-Uc-aG9">
