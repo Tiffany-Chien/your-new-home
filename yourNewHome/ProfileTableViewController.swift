@@ -43,7 +43,8 @@ class ProfileTableViewController: UITableViewController {
 
 //    Mark - IBActions
 //    TODO: add buttons for the switch or delete them
-    @IBAction func settingButtonPressed(_ sender: Any) {
+    @IBAction func settingsButtonPressed(_ sender: Any) {
+        showEditOptions()
     }
     
     @IBAction func cameraButtonPressed(_ sender: Any) {
@@ -129,6 +130,20 @@ class ProfileTableViewController: UITableViewController {
             print("upload pic")
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // show edit
+    private func showEditOptions() {
+        let alertController = UIAlertController(title: "Edit Account", message: "You are about to edit your information.", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Change Email", style: .default, handler: { (alert) in
+            print("change avatar")
+        }))
+        alertController.addAction(UIAlertAction(title: "Change Name", style: .default, handler: { (alert) in
+            print("upload pic")
+        }))
+        alertController.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
     }

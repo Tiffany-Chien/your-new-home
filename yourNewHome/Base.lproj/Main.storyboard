@@ -174,7 +174,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="settings"/>
                                                             <connections>
-                                                                <action selector="settingButton:" destination="ra9-In-MBU" eventType="touchUpInside" id="hBn-tr-eBj"/>
+                                                                <action selector="settingsButtonPressed:" destination="ra9-In-MBU" eventType="touchUpInside" id="oxE-6R-Lcg"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ll3-d2-XcR">
