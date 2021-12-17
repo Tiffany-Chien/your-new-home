@@ -61,8 +61,10 @@ class ProfileTableViewController: UITableViewController {
         // about me text view
         aboutMeView.layer.cornerRadius = 10
         
-        
-        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0;
     }
     
 
