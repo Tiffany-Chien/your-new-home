@@ -72,35 +72,48 @@
                     <connections>
                         <outlet property="emailField" destination="tc0-EC-DLp" id="97m-og-GjR"/>
                         <outlet property="passwordField" destination="vZD-A2-zYo" id="PkM-3o-tXy"/>
-                        <segue destination="dBO-aP-V4m" kind="presentation" identifier="loginSegue" id="tXT-7F-S2d"/>
+                        <segue destination="I9Q-Xf-3rj" kind="presentation" identifier="loginSegue" id="DPl-rl-Xd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
+            <point key="canvasLocation" x="-1" y="56"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="0mb-X5-bEj">
+        <!--Item 2-->
+        <scene sceneID="c4m-X7-q8a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dBO-aP-V4m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="P7T-Eb-AHX"/>
-                    <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vsB-Lh-wDJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ra9-In-MBU" kind="presentation" identifier="loginController" id="KKG-ny-7Ok"/>
-                        <segue destination="ra9-In-MBU" kind="relationship" relationship="rootViewController" id="x8L-01-l3O"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IhD-AT-LW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="4mR-95-M5m" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X4W-8Z-tLl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xpf-1I-tXf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Xkm-5Q-kpv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqV-Fc-bvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="418"/>
+            <point key="canvasLocation" x="2229" y="1193"/>
         </scene>
-        <!--Profile Table View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="D6g-Ye-LWi">
+            <objects>
+                <tabBarController id="I9Q-Xf-3rj" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cAa-ue-GfM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4mR-95-M5m" kind="relationship" relationship="viewControllers" id="qDz-L2-PIm"/>
+                        <segue destination="ra9-In-MBU" kind="relationship" relationship="viewControllers" id="rYx-TW-nw6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSu-F3-2Ua" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1383" y="398"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="bxK-Hz-SiP">
             <objects>
                 <tableViewController id="ra9-In-MBU" customClass="ProfileTableViewController" customModule="yourNewHome" customModuleProvider="target" sceneMemberID="viewController">
@@ -258,7 +271,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
                                                     <rect key="frame" x="20" y="11.333333333333336" width="374" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="EwU-E2-qCU"/>
@@ -367,7 +380,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="My Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-mt-nJA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-mt-nJA">
                                                     <rect key="frame" x="150" y="11.333333333333336" width="114.33333333333331" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -377,6 +390,8 @@
                                             <constraints>
                                                 <constraint firstItem="wSP-mt-nJA" firstAttribute="centerX" secondItem="lC7-1w-cb9" secondAttribute="centerX" id="11n-rN-A2h"/>
                                                 <constraint firstItem="wSP-mt-nJA" firstAttribute="centerY" secondItem="lC7-1w-cb9" secondAttribute="centerY" id="TtM-lZ-FcK"/>
+                                                <constraint firstItem="wSP-mt-nJA" firstAttribute="centerX" secondItem="lC7-1w-cb9" secondAttribute="centerX" id="tav-9R-nJA"/>
+                                                <constraint firstItem="wSP-mt-nJA" firstAttribute="centerY" secondItem="lC7-1w-cb9" secondAttribute="centerY" id="upm-nm-0VN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -410,7 +425,7 @@
                             <outlet property="delegate" destination="ra9-In-MBU" id="cpE-P8-pGY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="N9r-t0-teM"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="qxB-qI-fRO"/>
                     <navigationItem key="navigationItem" id="8md-Q3-zzw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -477,7 +492,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="eWK-AG-J4E" id="t9Q-xz-kUS"/>
                         <outlet property="passTextField" destination="xs8-si-oK5" id="aJV-25-IH8"/>
-                        <segue destination="dBO-aP-V4m" kind="presentation" identifier="successSignUp" id="63L-FE-tlf"/>
+                        <segue destination="I9Q-Xf-3rj" kind="presentation" id="8rk-Vh-AyP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DP8-8h-DFD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -486,15 +501,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="x8L-01-l3O"/>
-        <segue reference="63L-FE-tlf"/>
+        <segue reference="DPl-rl-Xd3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="appLogo" width="736" height="549"/>
         <image name="avatar" width="184" height="184"/>
         <image name="camera" width="60" height="60"/>
         <image name="edit" width="80" height="80"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="settings" width="80" height="80"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
