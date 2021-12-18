@@ -23,6 +23,13 @@
 		9860D9D1276DA7D200AB1A3E /* FirebaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9D0276DA7D200AB1A3E /* FirebaseListener.swift */; };
 		9860D9D5276DF02C00AB1A3E /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9D4276DF02C00AB1A3E /* FileStorage.swift */; };
 		9860D9D7276DF44B00AB1A3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9D6276DF44B00AB1A3E /* Extensions.swift */; };
+		9860D9D9276E049500AB1A3E /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9D8276E049500AB1A3E /* CardViewController.swift */; };
+		9860D9DD276E094400AB1A3E /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9DC276E094400AB1A3E /* UserCard.swift */; };
+		9860D9DF276E09FD00AB1A3E /* Shuffle_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9860D9DE276E09FD00AB1A3E /* Shuffle_iOS.framework */; };
+		9860D9E5276E0DF800AB1A3E /* UserCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9E1276E0DF500AB1A3E /* UserCardFooterView.swift */; };
+		9860D9E6276E0DF800AB1A3E /* UserCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9E2276E0DF600AB1A3E /* UserCardModel.swift */; };
+		9860D9E7276E0DF800AB1A3E /* UserCardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9E3276E0DF700AB1A3E /* UserCardOverlay.swift */; };
+		9860D9E8276E0DF800AB1A3E /* UserCardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9E4276E0DF800AB1A3E /* UserCardContentView.swift */; };
 		98632F75275AB6E5003133F6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98632F74275AB6E5003133F6 /* FeedViewController.swift */; };
 		98632F77275AC400003133F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98632F76275AC400003133F6 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +54,13 @@
 		9860D9D0276DA7D200AB1A3E /* FirebaseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseListener.swift; sourceTree = "<group>"; };
 		9860D9D4276DF02C00AB1A3E /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		9860D9D6276DF44B00AB1A3E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9860D9D8276E049500AB1A3E /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		9860D9DC276E094400AB1A3E /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		9860D9DE276E09FD00AB1A3E /* Shuffle_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shuffle_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9860D9E1276E0DF500AB1A3E /* UserCardFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCardFooterView.swift; sourceTree = "<group>"; };
+		9860D9E2276E0DF600AB1A3E /* UserCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCardModel.swift; sourceTree = "<group>"; };
+		9860D9E3276E0DF700AB1A3E /* UserCardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCardOverlay.swift; sourceTree = "<group>"; };
+		9860D9E4276E0DF800AB1A3E /* UserCardContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCardContentView.swift; sourceTree = "<group>"; };
 		98632F74275AB6E5003133F6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		98632F76275AC400003133F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F3E8F0AB04551B0706F6EA35 /* Pods-yourNewHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yourNewHome.debug.xcconfig"; path = "Target Support Files/Pods-yourNewHome/Pods-yourNewHome.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9860D9DF276E09FD00AB1A3E /* Shuffle_iOS.framework in Frameworks */,
 				76DB4DB76F3CA8B631F3AE41 /* Pods_yourNewHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,15 +101,14 @@
 			isa = PBXGroup;
 			children = (
 				378986D62751B40100BDCC80 /* GoogleService-Info.plist */,
-				9860D9C6276D175B00AB1A3E /* ProfileTableViewController.swift */,
+				9860D9DA276E08E900AB1A3E /* Feature */,
 				37331A7B2751A9100060F7FE /* AppDelegate.swift */,
 				98632F74275AB6E5003133F6 /* FeedViewController.swift */,
 				9860D9D4276DF02C00AB1A3E /* FileStorage.swift */,
 				37331A7D2751A9100060F7FE /* SceneDelegate.swift */,
-				378986D42751B3EC00BDCC80 /* LoginViewController.swift */,
+				9860D9DB276E08FF00AB1A3E /* Login */,
 				9860D9CC276D9DB300AB1A3E /* Model */,
 				9860D9CD276D9DC100AB1A3E /* Helpers */,
-				98632F76275AC400003133F6 /* SignUpViewController.swift */,
 				37331A7F2751A9100060F7FE /* ViewController.swift */,
 				37331A812751A9100060F7FE /* Main.storyboard */,
 				37331A842751A9120060F7FE /* Assets.xcassets */,
@@ -107,6 +121,7 @@
 		382D11CAE0E5FCD1B1236F9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9860D9DE276E09FD00AB1A3E /* Shuffle_iOS.framework */,
 				824E929B5667CB0E73761228 /* Pods_yourNewHome.framework */,
 			);
 			name = Frameworks;
@@ -116,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9860D9C8276D657200AB1A3E /* FUser.swift */,
+				9860D9E0276E0DB200AB1A3E /* CardViews */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +145,36 @@
 				9860D9D0276DA7D200AB1A3E /* FirebaseListener.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9860D9DA276E08E900AB1A3E /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				9860D9D8276E049500AB1A3E /* CardViewController.swift */,
+				9860D9C6276D175B00AB1A3E /* ProfileTableViewController.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		9860D9DB276E08FF00AB1A3E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				378986D42751B3EC00BDCC80 /* LoginViewController.swift */,
+				98632F76275AC400003133F6 /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9860D9E0276E0DB200AB1A3E /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				9860D9DC276E094400AB1A3E /* UserCard.swift */,
+				9860D9E4276E0DF800AB1A3E /* UserCardContentView.swift */,
+				9860D9E1276E0DF500AB1A3E /* UserCardFooterView.swift */,
+				9860D9E2276E0DF600AB1A3E /* UserCardModel.swift */,
+				9860D9E3276E0DF700AB1A3E /* UserCardOverlay.swift */,
+			);
+			path = CardViews;
 			sourceTree = "<group>";
 		};
 		E2103AD38651429CADFD2C12 /* Pods */ = {
@@ -261,13 +307,19 @@
 				9860D9CF276D9E1800AB1A3E /* FCollectionReference.swift in Sources */,
 				378986D52751B3EC00BDCC80 /* LoginViewController.swift in Sources */,
 				9860D9C9276D657200AB1A3E /* FUser.swift in Sources */,
+				9860D9E6276E0DF800AB1A3E /* UserCardModel.swift in Sources */,
+				9860D9E8276E0DF800AB1A3E /* UserCardContentView.swift in Sources */,
 				9860D9D5276DF02C00AB1A3E /* FileStorage.swift in Sources */,
+				9860D9E5276E0DF800AB1A3E /* UserCardFooterView.swift in Sources */,
 				37331A802751A9100060F7FE /* ViewController.swift in Sources */,
 				98632F75275AB6E5003133F6 /* FeedViewController.swift in Sources */,
+				9860D9D9276E049500AB1A3E /* CardViewController.swift in Sources */,
+				9860D9E7276E0DF800AB1A3E /* UserCardOverlay.swift in Sources */,
 				9860D9D7276DF44B00AB1A3E /* Extensions.swift in Sources */,
 				37331A7C2751A9100060F7FE /* AppDelegate.swift in Sources */,
 				37331A7E2751A9100060F7FE /* SceneDelegate.swift in Sources */,
 				9860D9CB276D742E00AB1A3E /* Constants.swift in Sources */,
+				9860D9DD276E094400AB1A3E /* UserCard.swift in Sources */,
 				9860D9D1276DA7D200AB1A3E /* FirebaseListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

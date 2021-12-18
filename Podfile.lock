@@ -500,8 +500,12 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - pop (1.0.12)
+  - PopBounceButton (1.2.2):
+    - pop (~> 1.0)
   - ProgressHUD (13.6)
   - PromisesObjC (2.0.0)
+  - Shuffle-iOS (0.5.0)
 
 DEPENDENCIES:
   - AlamofireImage
@@ -513,7 +517,9 @@ DEPENDENCIES:
   - Firebase/Storage
   - Gallery
   - MessageInputBar
+  - PopBounceButton
   - ProgressHUD
+  - Shuffle-iOS
 
 SPEC REPOS:
   trunk:
@@ -540,8 +546,11 @@ SPEC REPOS:
     - leveldb-library
     - MessageInputBar
     - nanopb
+    - pop
+    - PopBounceButton
     - ProgressHUD
     - PromisesObjC
+    - Shuffle-iOS
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -567,9 +576,12 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  PopBounceButton: 34105a012678222f058f8d2621672724a3d5c9fb
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  Shuffle-iOS: ff33658fb1e5eebd6a4724c156473e63754be9cb
 
-PODFILE CHECKSUM: 38f443e396c5c74dd2ab83f04c972e1bf7e28f49
+PODFILE CHECKSUM: 30d5c1a1ab230a2bbd075e0abd5c895a55dad83a
 
 COCOAPODS: 1.11.2

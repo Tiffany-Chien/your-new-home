@@ -16,4 +16,6 @@ target 'yourNewHome' do
   pod 'Firebase/Storage'
   pod 'Gallery'
   pod 'ProgressHUD'
+  pod 'Shuffle-iOS'
+  pod 'PopBounceButton'
 end

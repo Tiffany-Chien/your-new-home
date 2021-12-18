@@ -78,21 +78,21 @@
             </objects>
             <point key="canvasLocation" x="-1" y="56"/>
         </scene>
-        <!--Item 2-->
+        <!--Pet Match-->
         <scene sceneID="c4m-X7-q8a">
             <objects>
-                <viewController id="4mR-95-M5m" sceneMemberID="viewController">
+                <viewController title="Pet Match" id="4mR-95-M5m" customClass="CardViewController" customModule="yourNewHome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4W-8Z-tLl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Xpf-1I-tXf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Xkm-5Q-kpv"/>
+                    <navigationItem key="navigationItem" id="294-eH-EIk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqV-Fc-bvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229" y="1193"/>
+            <point key="canvasLocation" x="4023.188405797102" y="1220.7589285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="D6g-Ye-LWi">
@@ -104,7 +104,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4mR-95-M5m" kind="relationship" relationship="viewControllers" id="qDz-L2-PIm"/>
+                        <segue destination="zcO-Cr-lxl" kind="relationship" relationship="viewControllers" id="qDz-L2-PIm"/>
                         <segue destination="5ob-yJ-EeH" kind="relationship" relationship="viewControllers" id="rYx-TW-nw6"/>
                     </connections>
                 </tabBarController>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1383" y="398"/>
         </scene>
-        <!--Title-->
+        <!--Profile-->
         <scene sceneID="bxK-Hz-SiP">
             <objects>
-                <tableViewController id="ra9-In-MBU" customClass="ProfileTableViewController" customModule="yourNewHome" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Profile" id="ra9-In-MBU" customClass="ProfileTableViewController" customModule="yourNewHome" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1IZ-z4-296">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -571,6 +571,25 @@
             </objects>
             <point key="canvasLocation" x="2589.8550724637685" y="397.76785714285711"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bPv-CT-W8o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zcO-Cr-lxl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="pawprint.fill" catalog="system" id="Xkm-5Q-kpv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdK-dw-sAk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4mR-95-M5m" kind="relationship" relationship="rootViewController" id="t0r-Vn-QGE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTY-YQ-wLw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="1221"/>
+        </scene>
     </scenes>
     <resources>
         <image name="appLogo" width="736" height="549"/>
@@ -578,6 +597,7 @@
         <image name="camera" width="60" height="60"/>
         <image name="edit" width="80" height="80"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="pawprint.fill" catalog="system" width="128" height="113"/>
         <image name="settings" width="80" height="80"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
