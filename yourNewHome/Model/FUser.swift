@@ -113,8 +113,9 @@ class FUser: Equatable {
         genderTarget = _dictionary[kGENDERTARGET] as? String ?? ""
         likedIdArray = _dictionary[kLIKEDARRAY] as? [String]
         
+        avatar = UIImage(named: "avatar")
         
-        
+    
     }
     
     // MARK: Returning current user

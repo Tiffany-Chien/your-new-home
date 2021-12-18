@@ -28,7 +28,7 @@ class ProfileTableViewController: UITableViewController {
     
     var avatarImage: UIImage?
     var gallery: GalleryController!
-    
+
     
     //MARK: ViewLifeCycle
     
@@ -39,6 +39,10 @@ class ProfileTableViewController: UITableViewController {
         overrideUserInterfaceStyle = .light
 //        Setup
         setupBackgrounds();
+        
+        setupPickerView()
+        setupBackgrounds()
+        
         if (FUser.currentUser() != nil) {
             loadUserData();
             updateEditingMode();
@@ -100,6 +104,7 @@ class ProfileTableViewController: UITableViewController {
         // disable editing mode
         editingMode = false
         updateEditingMode()
+        showSaveButton()
 
     }
     
@@ -139,6 +144,32 @@ class ProfileTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = editingMode ? saveButton : nil
     }
     
+    // MARK: picker view
+    private func setupPickerView() {
+
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor().primary()
+        toolBar.sizeToFit()
+
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboard))
+        doneButton.tintColor = .black
+        
+        toolBar.setItems([spaceButton, doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(false)
+    }
+    
+    
+    
 //    MARK: load userdata
     // TODO: add default value for those switch
     private func loadUserData() {
@@ -152,7 +183,7 @@ class ProfileTableViewController: UITableViewController {
         cityTextField.text = currentUser.city
         countryTextField.text = currentUser.country
         // TODO: set avatar picture
-        avatarImageView.image = UIImage(named: "avatar")?.circleMasked
+        avatarImageView.image = UIImage(named: "avatar")
         avatarImageView.image = currentUser.avatar?.circleMasked
     }
     
@@ -183,9 +214,6 @@ class ProfileTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Change Portofolio", style: .default, handler: { (alert) in
             self.showGallery(forAvatar: true)
         }))
-        alertController.addAction(UIAlertAction(title: "Upload Picture", style: .default, handler: { (alert) in
-            self.showGallery(forAvatar: false)
-        }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
@@ -200,9 +228,33 @@ class ProfileTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Change Name", style: .default, handler: { (alert) in
             print("upload pic")
         }))
-        alertController.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: {
+            (alert) in self.logOutUser()
+        }))
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: logout
+    
+    private func logOutUser() {
+        
+        FUser.logOutCurrentUser { (error) in
+            
+            if error == nil {
+                
+                let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+                
+                DispatchQueue.main.async {
+                    loginView.modalPresentationStyle = .fullScreen
+                    self.present(loginView, animated: true, completion: nil)
+                }
+                
+            } else {
+                ProgressHUD.showError(error!.localizedDescription)
+            }
+        }
+        
     }
     
     // MARK: Upload images

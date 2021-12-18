@@ -40,23 +40,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
+    // TODO: change functions, not working 
     //MARK: - UIConfiguration
-//    private func setupUIConfigurations() {
-//
-//        UITabBar.appearance().shadowImage = UIImage()
-//        UITabBar.appearance().backgroundImage = UIImage()
-//        UITabBar.appearance().backgroundColor = UIColor().primary()
-//        UITabBar.appearance().unselectedItemTintColor = UIColor().tabBarUnselected()
-//        UITabBar.appearance().tintColor = .white
-//
-//
-//        UINavigationBar.appearance().barTintColor = UIColor().primary()
-//        UINavigationBar.appearance().backgroundColor = UIColor().primary()
-//        UIBarButtonItem.appearance().tintColor = .white
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        UINavigationBar.appearance().isTranslucent = false
-//
-//    }
+    private func setupUIConfigurations() {
+
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().backgroundColor = UIColor().primary()
+        UITabBar.appearance().unselectedItemTintColor = UIColor().tabBarUnselected()
+        UITabBar.appearance().tintColor = .white
+
+
+        UINavigationBar.appearance().barTintColor = UIColor().primary()
+        UINavigationBar.appearance().backgroundColor = UIColor().primary()
+        UIBarButtonItem.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+
+    }
     
     
 }
