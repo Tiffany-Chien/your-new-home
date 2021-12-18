@@ -133,27 +133,57 @@ class FUser: Equatable {
     
     
     
-    
-//    // TODO: add username text field username: String as params
-//    class func registerUserWith(email: String, name: String, completion: @escaping (_ error: Error?)-> Void) {
-//
-//    }
-    // MARK: save user func
+    //MARK: - Save user funcs
     func saveUserLocally() {
         userDefaults.setValue(self.userDictionary as! [String : Any], forKey: kCURRENTUSER)
         userDefaults.synchronize()
     }
     
-    //save to firestore
     func saveUserToFireStore() {
-        // store to firebase
-        
+                
         FirebaseReference(.User).document(self.objectId).setData(self.userDictionary as! [String : Any]) { (error) in
+            
             if error != nil {
                 print(error!.localizedDescription)
             }
         }
     }
     
+    //MARK: - Update User funcs
+    
+    func updateCurrentUserInFireStore(withValues: [String : Any], completion: @escaping (_ error: Error?) -> Void) {
+        
+        if let dictionary = userDefaults.object(forKey: kCURRENTUSER) {
+            
+            let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+            userObject.setValuesForKeys(withValues)
+            
+            FirebaseReference(.User).document(FUser.currentId()).updateData(withValues) {
+                error in
+                
+                completion(error)
+                if error == nil {
+                    FUser(_dictionary: userObject).saveUserLocally()
+                }
+            }
+        }
+    }
+    
+    
+    //MARK: - LogOut user
+    
+    class func logOutCurrentUser(completion: @escaping(_ error: Error?) ->Void) {
+        
+        do {
+            try Auth.auth().signOut()
+            
+            userDefaults.removeObject(forKey: kCURRENTUSER)
+            userDefaults.synchronize()
+            completion(nil)
+
+        } catch let error as NSError {
+            completion(error)
+        }
+    }
     
 }

@@ -8,6 +8,7 @@
 import Foundation
 
 public let userDefaults = UserDefaults.standard
+public let kFILEREFERENCE = "gs://yournewhome-1098e.appspot.com"
 
 // FUser
 public let kOBJECTID = "objectId"
@@ -28,6 +29,7 @@ public let kPUSHID = "pushId"
 public let kAVATARLINK = "avatarLink"
 
 public let kCURRENTUSER = "currentUser"
+
 
 
 

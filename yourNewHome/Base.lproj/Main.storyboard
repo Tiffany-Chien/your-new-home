@@ -455,8 +455,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="qxB-qI-fRO"/>
-                    <navigationItem key="navigationItem" title="Title" id="AOU-kB-Wng"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="lca-o3-1Nv"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="aboutMeTextView" destination="oZh-iU-yta" id="Evy-pF-PGV"/>
                         <outlet property="aboutMeView" destination="8Hh-RE-OLi" id="IVn-GO-Ef9"/>

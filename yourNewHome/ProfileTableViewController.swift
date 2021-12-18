@@ -63,16 +63,20 @@ class ProfileTableViewController: UITableViewController {
     }
     
     @IBAction func editButtonPressed(_ sender: Any) {
+        let user = FUser.currentUser()!
+
         // switch it on or off
         editingMode.toggle()
         updateEditingMode()
         editingMode ? showKeyboard() : hideKeyboard()
         // todo fix this
-        showSaveButton()
+//        showSaveButton()
         if (editingMode) {
 //            if the show save button not fix
 //            We temporariliy want to save it when pressed
+            saveUserData(user: user)
         }
+        saveUserData(user: user)
         
     }
     
@@ -95,8 +99,8 @@ class ProfileTableViewController: UITableViewController {
         // disable editing mode
         editingMode = false
         updateEditingMode()
-        showSaveButton()
-        
+        saveUserData(user: user)
+
     }
     
     private func saveUserData(user: FUser) {
