@@ -70,7 +70,8 @@ class FUser: Equatable {
             kTYPETARGET as NSCopying,
             kAGETARGET as NSCopying,
             kSIZETARGET as NSCopying,
-            kGENDERTARGET as NSCopying
+            kGENDERTARGET as NSCopying,
+            kPUSHID as NSCopying
         ])
     }
     
@@ -85,6 +86,7 @@ class FUser: Equatable {
         city = ""
         imageLinks = []
         avatarLink = _avatarLink
+        pushId = ""
         
         typeTarget = ""
         ageTarget = ""
@@ -94,14 +96,49 @@ class FUser: Equatable {
         
     }
     
+    init(_dictionary: NSDictionary) {
+        objectId = _dictionary[kOBJECTID] as? String ?? ""
+        email = _dictionary[kEMAIL] as? String ?? ""
+        username = _dictionary[kUSERNAME] as? String ?? ""
+        about = _dictionary[kABOUT] as? String ?? ""
+        city = _dictionary[kCITY] as? String ?? ""
+        country = _dictionary[kCOUNTRY] as? String ?? ""
+        city = _dictionary[kCITY] as? String ?? ""
+        imageLinks = _dictionary[kIMAGELINKS] as? [String]
+        avatarLink = _dictionary[kAVATARLINK] as? String ?? ""
+        pushId = _dictionary[kPUSHID] as? String ?? ""
+        
+        typeTarget = _dictionary[kTYPETARGET] as? String ?? ""
+        ageTarget = _dictionary[kAGETARGET] as? String ?? ""
+        sizeTarget = _dictionary[kSIZETARGET] as? String ?? ""
+        genderTarget = _dictionary[kGENDERTARGET] as? String ?? ""
+        likedIdArray = _dictionary[kLIKEDARRAY] as? [String]
+        
+        
+        
+    }
+    
     
 //    // TODO: add username text field username: String as params
 //    class func registerUserWith(email: String, name: String, completion: @escaping (_ error: Error?)-> Void) {
 //
 //    }
-    
+    // save user func
     func saveUserLocally() {
         userDefaults.setValue(self.userDictionary as! [String : Any], forKey: kCURRENTUSER)
         userDefaults.synchronize()
     }
+    
+    //save to firestore
+    func saveUserToFireStore() {
+        // store to firebase
+        
+        FirebaseReference(.User).document(self.objectId).setData(self.userDictionary as! [String : Any]) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
+    
 }

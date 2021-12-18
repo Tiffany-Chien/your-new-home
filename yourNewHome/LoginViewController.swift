@@ -69,7 +69,14 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                print("You have signed in")
+                print("You have logged in")
+                // download data
+                
+                FirebaseListener.shared.downloadCurrentUserFromFirebase(userId: result!.user.uid, email: email)
+                
+                
+                
+                
                 self?.performSegue(withIdentifier: "loginSegue", sender: nil)
             })
         }))
