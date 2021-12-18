@@ -12,6 +12,7 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,15 @@ class SignUpViewController: UIViewController {
         }
             print("You have signed up")
             self.performSegue(withIdentifier: "successSignUp", sender: nil)
+            FUser.registerUserWith(email: email, password: password, name: self.nameTextField.text!) { error in
+                print("error in registration")
+            }
         })
+        
     }
+    
+    
+    
     /*
     // MARK: - Navigation
 

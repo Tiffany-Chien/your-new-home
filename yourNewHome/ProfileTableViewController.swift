@@ -33,7 +33,13 @@ class ProfileTableViewController: UITableViewController {
         overrideUserInterfaceStyle = .light
 //        Setup
         setupBackgrounds();
-        updateEditingMode();
+//        if (LoginViewController.currentUser() != nil) {
+//            loadUserData();
+//            updateEditingMode();
+//        }
+        
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -98,6 +104,14 @@ class ProfileTableViewController: UITableViewController {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(editUserData))
 //        TODO: add a nav bar
         navigationItem.rightBarButtonItem = editingMode ? saveButton : nil
+    }
+    
+//    Name: load userdata
+    private func loadUserData() {
+//        let currentUser = LoginViewController.currentUser()!
+        
+//        usernameLabel.text = currentUser.username
+        
     }
     
     
