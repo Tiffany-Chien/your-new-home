@@ -70,8 +70,7 @@ class FUser: Equatable {
             kTYPETARGET as NSCopying,
             kAGETARGET as NSCopying,
             kSIZETARGET as NSCopying,
-            kGENDERTARGET as NSCopying,
-            kPUSHID as NSCopying
+            kGENDERTARGET as NSCopying
         ])
     }
     
