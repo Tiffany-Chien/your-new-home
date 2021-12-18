@@ -48,7 +48,9 @@ class LoginViewController: UIViewController {
                 strongSelf.showCreateAccount(email: email, password: password)
                 return
             }
+            //loggenin
             FirebaseListener.shared.downloadCurrentUserFromFirebase(userId: result!.user.uid, email: email)
+            self!.goToApp()
             self?.performSegue(withIdentifier: "loginSegue", sender: nil)
         })
         print("You have signed in");
@@ -93,6 +95,14 @@ class LoginViewController: UIViewController {
         print("sign up clicked")
     }
     
+    //MARK: navigation
+    private func goToApp() {
+        
+        let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "MainView") as! UITabBarController
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
+        
+    }
     
     
 }
