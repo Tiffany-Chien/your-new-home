@@ -18,7 +18,7 @@ class FirebaseListener {
     
 //    FUser
     func downloadCurrentUserFromFirebase(userId: String, email: String) {
-        FirebaseReference(.User).document(userId).getDocument { snapshot, error in
+        FirebaseReference(.User).document(userId).getDocument { (snapshot, error) in
             guard let snapshot = snapshot else { return }
             if snapshot.exists {
                 // user logged in before

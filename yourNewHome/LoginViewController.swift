@@ -48,9 +48,11 @@ class LoginViewController: UIViewController {
                 strongSelf.showCreateAccount(email: email, password: password)
                 return
             }
+            FirebaseListener.shared.downloadCurrentUserFromFirebase(userId: result!.user.uid, email: email)
             self?.performSegue(withIdentifier: "loginSegue", sender: nil)
         })
         print("You have signed in");
+
         
     }
     
@@ -91,8 +93,8 @@ class LoginViewController: UIViewController {
         print("sign up clicked")
     }
     
-
-
+    
+    
 }
 
 
