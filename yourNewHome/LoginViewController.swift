@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
             //loggenin
             FirebaseListener.shared.downloadCurrentUserFromFirebase(userId: result!.user.uid, email: email)
             self!.goToApp()
-            self?.performSegue(withIdentifier: "loginSegue", sender: nil)
+//            self?.performSegue(withIdentifier: "loginSegue", sender: nil)
         })
         print("You have signed in");
 

@@ -72,7 +72,6 @@
                     <connections>
                         <outlet property="emailField" destination="tc0-EC-DLp" id="97m-og-GjR"/>
                         <outlet property="passwordField" destination="vZD-A2-zYo" id="PkM-3o-tXy"/>
-                        <segue destination="I9Q-Xf-3rj" kind="presentation" identifier="loginSegue" id="DPl-rl-Xd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,7 +83,7 @@
             <objects>
                 <viewController id="4mR-95-M5m" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4W-8Z-tLl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Xpf-1I-tXf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -118,7 +117,7 @@
             <objects>
                 <tableViewController id="ra9-In-MBU" customClass="ProfileTableViewController" customModule="yourNewHome" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1IZ-z4-296">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
@@ -546,7 +545,6 @@
                         <outlet property="emailTextField" destination="eWK-AG-J4E" id="t9Q-xz-kUS"/>
                         <outlet property="nameTextField" destination="bCn-0I-yUL" id="Ce4-Yp-5Tt"/>
                         <outlet property="passTextField" destination="xs8-si-oK5" id="aJV-25-IH8"/>
-                        <segue destination="I9Q-Xf-3rj" kind="presentation" identifier="successSignUp" id="8rk-Vh-AyP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DP8-8h-DFD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -554,9 +552,6 @@
             <point key="canvasLocation" x="29" y="816"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="DPl-rl-Xd3"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="appLogo" width="736" height="549"/>
         <image name="avatar" width="184" height="184"/>
