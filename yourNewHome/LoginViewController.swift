@@ -91,19 +91,7 @@ class LoginViewController: UIViewController {
         print("sign up clicked")
     }
     
-    // MARK: Returning current user
-    class func currentId() -> String {
-        return Auth.auth().currentUser!.uid
-    }
-    
-//    class func currentUser() -> LoginViewController? {
-//        if Auth.auth().currentUser != nil {
-//            if let userDicationary = UserDefaults.object(forKey: kCURRENTUSER) {
-//                return LoginViewController(_dictionary: userDicationary as! NSDictionary)
-//            }
-//        }
-//        return nil
-//    }
+
 
 }
 

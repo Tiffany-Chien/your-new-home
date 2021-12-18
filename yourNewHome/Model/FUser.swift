@@ -118,12 +118,28 @@ class FUser: Equatable {
         
     }
     
+    // MARK: Returning current user
+    class func currentId() -> String {
+        return Auth.auth().currentUser!.uid
+    }
+    
+    class func currentUser() -> FUser? {
+        if Auth.auth().currentUser != nil {
+            if let userDictionary = userDefaults.object(forKey: kCURRENTUSER) {
+                return FUser(_dictionary: userDictionary as! NSDictionary)
+            }
+        }
+        return nil
+    }
+    
+    
+    
     
 //    // TODO: add username text field username: String as params
 //    class func registerUserWith(email: String, name: String, completion: @escaping (_ error: Error?)-> Void) {
 //
 //    }
-    // save user func
+    // MARK: save user func
     func saveUserLocally() {
         userDefaults.setValue(self.userDictionary as! [String : Any], forKey: kCURRENTUSER)
         userDefaults.synchronize()

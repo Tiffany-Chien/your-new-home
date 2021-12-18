@@ -23,6 +23,7 @@ class ProfileTableViewController: UITableViewController {
 //    MARK: Vars
     var editingMode = false
     
+    var avatarImage: UIImage?
     
     //MARK: ViewLifeCycle
     
@@ -33,10 +34,10 @@ class ProfileTableViewController: UITableViewController {
         overrideUserInterfaceStyle = .light
 //        Setup
         setupBackgrounds();
-//        if (LoginViewController.currentUser() != nil) {
-//            loadUserData();
-//            updateEditingMode();
-//        }
+        if (FUser.currentUser() != nil) {
+            loadUserData();
+            updateEditingMode();
+        }
         
         
         
@@ -72,7 +73,31 @@ class ProfileTableViewController: UITableViewController {
     }
     
     @objc func editUserData() {
+        let user = FUser.currentUser()!
         
+        user.about = aboutMeTextView.text
+        user.city = cityTextField.text ?? ""
+        user.country = countryTextField.text ?? ""
+        
+        if avatarImage != nil {
+            // upload new avatar
+            // save user
+            
+        } else {
+            // save
+            saveUserData(user: user)
+        }
+        
+        // disable editing mode
+        editingMode = false
+        updateEditingMode()
+        showSaveButton()
+        
+    }
+    
+    private func saveUserData(user: FUser) {
+        user.saveUserLocally()
+        user.saveUserToFireStore()
     }
     
     
@@ -106,16 +131,23 @@ class ProfileTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = editingMode ? saveButton : nil
     }
     
-//    Name: load userdata
+//    MARK: load userdata
+    // TODO: add default value for those switch
     private func loadUserData() {
-//        let currentUser = LoginViewController.currentUser()!
-        
-//        usernameLabel.text = currentUser.username
+        let currentUser = FUser.currentUser()!
+        usernameLabel.text = currentUser.username
+        cityCountryLabel.text = currentUser.country + ", " + currentUser.city
+        aboutMeTextView.text = currentUser.about != "" ? currentUser.about : "A little bit about me..."
+        cityTextField.text = currentUser.city
+        countryTextField.text = currentUser.country
+        // TODO: set avatar picture
+        avatarImageView.image = nil
         
     }
     
     
-//    Editing mode: allow user to edit
+//    MARK: Editing mode:
+    // allow user to edit
     private func updateEditingMode() {
         aboutMeTextView.isUserInteractionEnabled = editingMode
         cityTextField.isUserInteractionEnabled = editingMode
