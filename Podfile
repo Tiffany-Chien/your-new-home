@@ -13,4 +13,6 @@ target 'yourNewHome' do
   pod 'Firebase/Database'
   pod 'Firebase'
   pod 'Firebase/Firestore'
+  
+  pod 'Gallery'
 end

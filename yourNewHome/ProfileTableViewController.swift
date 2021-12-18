@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Gallery
 
 class ProfileTableViewController: UITableViewController {
     
@@ -22,8 +23,11 @@ class ProfileTableViewController: UITableViewController {
     
 //    MARK: Vars
     var editingMode = false
+    var uploadingAvatar = true
     
     var avatarImage: UIImage?
+    var gallery: GalleryController!
+    
     
     //MARK: ViewLifeCycle
     
@@ -170,10 +174,10 @@ class ProfileTableViewController: UITableViewController {
     private func showPictureOptions() {
         let alertController = UIAlertController(title: "Upload Picture", message: "Change your picture or upload more photo", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Change Portofolio", style: .default, handler: { (alert) in
-            print("change avatar")
+            self.showGallery(forAvatar: true)
         }))
         alertController.addAction(UIAlertAction(title: "Upload Picture", style: .default, handler: { (alert) in
-            print("upload pic")
+            self.showGallery(forAvatar: false)
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
@@ -193,5 +197,58 @@ class ProfileTableViewController: UITableViewController {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: Gallery
+    private func showGallery(forAvatar: Bool) {
+     
+        uploadingAvatar = forAvatar
+        self.gallery = GalleryController()
+        self.gallery.delegate = self
+        Config.tabsToShow = [.imageTab, .cameraTab]
+        Config.Camera.imageLimit = 1
+        Config.initialTab = .imageTab
+        
+        self.present(gallery, animated: true, completion: nil)
+        
+    }
 
 }
+
+
+extension ProfileTableViewController: GalleryControllerDelegate {
+    
+    func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
+//        user did chose an img
+        if (images.count > 0) {
+            if (uploadingAvatar) {
+                images.first!.resolve { icon in
+                    if icon != nil {
+                        self.editingMode = true
+                        self.showSaveButton()
+                        self.avatarImageView.image = icon
+                        self.avatarImage = icon
+                    }
+                }
+            } else {
+                print("have multiple images")
+            }
+        }
+    }
+    
+    func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
+        controller.dismiss(animated: true, completion: nil)
+
+    }
+    
+    func galleryControllerDidCancel(_ controller: GalleryController) {
+        controller.dismiss(animated: true, completion: nil)
+
+    }
+    
+    
+}
+
