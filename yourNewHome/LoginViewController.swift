@@ -43,14 +43,15 @@ class LoginViewController: UIViewController {
             return
         }
             guard error == nil else {
-//           TODO: show message that account doesnt exist
-            print("account doesn't exist")
+                //           TODO: show message that account doesnt exist
+                print("account doesn't exist")
                 strongSelf.showCreateAccount(email: email, password: password)
-            return
-        }
+                return
+            }
             self?.performSegue(withIdentifier: "loginSegue", sender: nil)
         })
         print("You have signed in");
+        
     }
     
     func showCreateAccount(email: String, password: String){

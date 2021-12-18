@@ -11,5 +11,6 @@ target 'yourNewHome' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
- 
+  pod 'Firebase'
+  pod 'Firebase/Firestore'
 end
