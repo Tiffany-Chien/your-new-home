@@ -8,13 +8,17 @@
 import UIKit
 import Shuffle_iOS
 import Firebase
+import FirebaseCore
+import FirebaseDatabase
 
 class CardViewController: UIViewController {
     
     //MARK: Testing data
     private let cardStack = SwipeCardStack()
     private var initialCardModels: [UserCardModel] = []
+
     
+
     
     //MARK: View LifeCycle
     
@@ -24,7 +28,27 @@ class CardViewController: UIViewController {
 //        let user = FUser.currentUser()
         let cardModel = UserCardModel(name: "Cat", age: "Baby", breed: "American", image: UIImage(named: "avatar"))
         initialCardModels.append(cardModel)
+        // hard code data no internet ;(
+        loadDataHelper(petName: "Coco Puff", petAge: "Baby", petBreed: "Dilute Tortoiseshell", petImage: "pet01")
+        loadDataHelper(petName: "Kershaw", petAge: "Adult", petBreed: "Terrier", petImage: "pet02")
+        loadDataHelper(petName: "Trevor", petAge: "Young", petBreed: "Landrador Retriever", petImage: "pet03")
+        loadDataHelper(petName: "Isabella", petAge: "Adult", petBreed: "Landrador Retriever", petImage: "pet04")
+        loadDataHelper(petName: "Erin", petAge: "Young", petBreed: "American Shorthair", petImage: "pet05")
+        loadDataHelper(petName: "Hudson", petAge: "Adult", petBreed: "Alaskan Malamute", petImage: "pet06")
+        loadDataHelper(petName: "Casey", petAge: "Baby", petBreed: "Tabby", petImage: "pet07")
+
+        loadDataHelper(petName: "Tandy", petAge: "Baby", petBreed: "Australian Cattle Dog", petImage: "pet08")
+        loadDataHelper(petName: "Mooshie", petAge: "Young", petBreed: "Australian Cattle Dog", petImage: "pet09")
+        loadDataHelper(petName: "Opie", petAge: "Young", petBreed: "Pit Bull Terrier", petImage: "pet10")
+        loadDataHelper(petName: "Tami", petAge: "Baby", petBreed: "Australian Cattle Dog", petImage: "pet11")
+        loadDataHelper(petName: "Trina", petAge: "Baby", petBreed: "Australian Cattle Dog", petImage: "pet12")
+        
         layoutCardStackView()
+    }
+    
+    private func loadDataHelper(petName: String, petAge: String, petBreed: String, petImage: String) {
+        let card = UserCardModel(name: petName, age: petAge, breed: petBreed, image: UIImage(named: petImage))
+        initialCardModels.append(card)
     }
     
     //MARK: Layoyt
