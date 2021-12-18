@@ -12,6 +12,7 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,17 @@ class SignUpViewController: UIViewController {
         }
             print("You have signed up")
             self.performSegue(withIdentifier: "successSignUp", sender: nil)
+            if (result?.user != nil) {
+                let user = FUser(_objectId: result!.user.uid, _email: email, _username: self.nameTextField.text!)
+                user.saveUserLocally()
+            }
+
         })
+        
     }
+    
+    
+    
     /*
     // MARK: - Navigation
 
