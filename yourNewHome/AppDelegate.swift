@@ -8,14 +8,20 @@
 import UIKit
 import Firebase
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         FirebaseApp.configure()
+        
+//        setupUIConfigurations()
+        
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = 0
+        
         return true
     }
 
@@ -33,6 +39,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    
+    // TODO: change functions, not working 
+    //MARK: - UIConfiguration
+    private func setupUIConfigurations() {
 
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().backgroundColor = UIColor().primary()
+        UITabBar.appearance().unselectedItemTintColor = UIColor().tabBarUnselected()
+        UITabBar.appearance().tintColor = .white
+
+
+        UINavigationBar.appearance().barTintColor = UIColor().primary()
+        UINavigationBar.appearance().backgroundColor = UIColor().primary()
+        UIBarButtonItem.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+
+    }
+    
+    
 }
+
 

@@ -85,6 +85,7 @@ class FUser: Equatable {
         city = ""
         imageLinks = []
         avatarLink = _avatarLink
+        pushId = ""
         
         typeTarget = ""
         ageTarget = ""
@@ -94,14 +95,96 @@ class FUser: Equatable {
         
     }
     
+    init(_dictionary: NSDictionary) {
+        objectId = _dictionary[kOBJECTID] as? String ?? ""
+        email = _dictionary[kEMAIL] as? String ?? ""
+        username = _dictionary[kUSERNAME] as? String ?? ""
+        about = _dictionary[kABOUT] as? String ?? ""
+        city = _dictionary[kCITY] as? String ?? ""
+        country = _dictionary[kCOUNTRY] as? String ?? ""
+        city = _dictionary[kCITY] as? String ?? ""
+        imageLinks = _dictionary[kIMAGELINKS] as? [String]
+        avatarLink = _dictionary[kAVATARLINK] as? String ?? ""
+        pushId = _dictionary[kPUSHID] as? String ?? ""
+        
+        typeTarget = _dictionary[kTYPETARGET] as? String ?? ""
+        ageTarget = _dictionary[kAGETARGET] as? String ?? ""
+        sizeTarget = _dictionary[kSIZETARGET] as? String ?? ""
+        genderTarget = _dictionary[kGENDERTARGET] as? String ?? ""
+        likedIdArray = _dictionary[kLIKEDARRAY] as? [String]
+        
+        avatar = UIImage(named: "avatar")
+        
     
-//    // TODO: add username text field username: String as params
-//    class func registerUserWith(email: String, name: String, completion: @escaping (_ error: Error?)-> Void) {
-//
-//    }
+    }
     
+    // MARK: Returning current user
+    class func currentId() -> String {
+        return Auth.auth().currentUser!.uid
+    }
+    
+    class func currentUser() -> FUser? {
+        if Auth.auth().currentUser != nil {
+            if let userDictionary = userDefaults.object(forKey: kCURRENTUSER) {
+                return FUser(_dictionary: userDictionary as! NSDictionary)
+            }
+        }
+        return nil
+    }
+    
+    
+    
+    //MARK: - Save user funcs
     func saveUserLocally() {
         userDefaults.setValue(self.userDictionary as! [String : Any], forKey: kCURRENTUSER)
         userDefaults.synchronize()
     }
+    
+    func saveUserToFireStore() {
+                
+        FirebaseReference(.User).document(self.objectId).setData(self.userDictionary as! [String : Any]) { (error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
+    //MARK: - Update User funcs
+    
+    func updateCurrentUserInFireStore(withValues: [String : Any], completion: @escaping (_ error: Error?) -> Void) {
+        
+        if let dictionary = userDefaults.object(forKey: kCURRENTUSER) {
+            
+            let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+            userObject.setValuesForKeys(withValues)
+            
+            FirebaseReference(.User).document(FUser.currentId()).updateData(withValues) {
+                error in
+                
+                completion(error)
+                if error == nil {
+                    FUser(_dictionary: userObject).saveUserLocally()
+                }
+            }
+        }
+    }
+    
+    
+    //MARK: - LogOut user
+    
+    class func logOutCurrentUser(completion: @escaping(_ error: Error?) ->Void) {
+        
+        do {
+            try Auth.auth().signOut()
+            
+            userDefaults.removeObject(forKey: kCURRENTUSER)
+            userDefaults.synchronize()
+            completion(nil)
+
+        } catch let error as NSError {
+            completion(error)
+        }
+    }
+    
 }

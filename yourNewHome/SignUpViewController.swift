@@ -32,11 +32,12 @@ class SignUpViewController: UIViewController {
             return
         }
             print("You have signed up")
-            self.performSegue(withIdentifier: "successSignUp", sender: nil)
+//            self.performSegue(withIdentifier: "successSignUp", sender: nil)
             if (result?.user != nil) {
                 let user = FUser(_objectId: result!.user.uid, _email: email, _username: self.nameTextField.text!)
                 user.saveUserLocally()
             }
+            self.goToApp()
 
         })
         
@@ -44,14 +45,15 @@ class SignUpViewController: UIViewController {
     
     
     
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+    private func goToApp() {
+        
+        let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "MainView") as! UITabBarController
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
+        
+    }
 }

@@ -48,9 +48,13 @@ class LoginViewController: UIViewController {
                 strongSelf.showCreateAccount(email: email, password: password)
                 return
             }
-            self?.performSegue(withIdentifier: "loginSegue", sender: nil)
+            //loggenin
+            FirebaseListener.shared.downloadCurrentUserFromFirebase(userId: result!.user.uid, email: email)
+            self!.goToApp()
+//            self?.performSegue(withIdentifier: "loginSegue", sender: nil)
         })
         print("You have signed in");
+
         
     }
     
@@ -69,7 +73,14 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                print("You have signed in")
+                print("You have logged in")
+                // download data
+                
+                FirebaseListener.shared.downloadCurrentUserFromFirebase(userId: result!.user.uid, email: email)
+                
+                
+                
+                
                 self?.performSegue(withIdentifier: "loginSegue", sender: nil)
             })
         }))
@@ -84,20 +95,16 @@ class LoginViewController: UIViewController {
         print("sign up clicked")
     }
     
-    // MARK: Returning current user
-    class func currentId() -> String {
-        return Auth.auth().currentUser!.uid
+    //MARK: navigation
+    private func goToApp() {
+        
+        let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "MainView") as! UITabBarController
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
+        
     }
     
-//    class func currentUser() -> LoginViewController? {
-//        if Auth.auth().currentUser != nil {
-//            if let userDicationary = UserDefaults.object(forKey: kCURRENTUSER) {
-//                return LoginViewController(_dictionary: userDicationary as! NSDictionary)
-//            }
-//        }
-//        return nil
-//    }
-
+    
 }
 
 
