@@ -105,7 +105,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="4mR-95-M5m" kind="relationship" relationship="viewControllers" id="qDz-L2-PIm"/>
-                        <segue destination="ra9-In-MBU" kind="relationship" relationship="viewControllers" id="rYx-TW-nw6"/>
+                        <segue destination="5ob-yJ-EeH" kind="relationship" relationship="viewControllers" id="rYx-TW-nw6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSu-F3-2Ua" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -281,7 +281,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
                                                     <rect key="frame" x="20" y="11.666666666666664" width="374" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="EwU-E2-qCU"/>
@@ -454,7 +454,6 @@
                             <outlet property="delegate" destination="ra9-In-MBU" id="cpE-P8-pGY"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="qxB-qI-fRO"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="lca-o3-1Nv"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -471,7 +470,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIG-bG-FAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="398"/>
+            <point key="canvasLocation" x="3500.0000000000005" y="397.76785714285711"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Ci9-io-v16">
@@ -551,6 +550,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DP8-8h-DFD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29" y="816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rf8-Sg-kC4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ob-yJ-EeH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="qxB-qI-fRO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M0H-EH-mZy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ra9-In-MBU" kind="relationship" relationship="rootViewController" id="bCk-t3-pnT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="due-NC-XYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2589.8550724637685" y="397.76785714285711"/>
         </scene>
     </scenes>
     <resources>

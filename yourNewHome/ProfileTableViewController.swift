@@ -7,6 +7,7 @@
 
 import UIKit
 import Gallery
+import ProgressHUD
 
 class ProfileTableViewController: UITableViewController {
     
@@ -63,20 +64,11 @@ class ProfileTableViewController: UITableViewController {
     }
     
     @IBAction func editButtonPressed(_ sender: Any) {
-        let user = FUser.currentUser()!
-
-        // switch it on or off
         editingMode.toggle()
         updateEditingMode()
+        
         editingMode ? showKeyboard() : hideKeyboard()
-        // todo fix this
-//        showSaveButton()
-        if (editingMode) {
-//            if the show save button not fix
-//            We temporariliy want to save it when pressed
-            saveUserData(user: user)
-        }
-        saveUserData(user: user)
+        showSaveButton()
         
     }
     
@@ -90,16 +82,24 @@ class ProfileTableViewController: UITableViewController {
         if avatarImage != nil {
             // upload new avatar
             // save user
+            uploadAvatar(avatarImage!) { (avatarLink) in
+                
+                user.avatarLink = avatarLink ?? ""
+                user.avatar = self.avatarImage
+                
+                self.saveUserData(user: user)
+                self.loadUserData()
+            }
             
         } else {
             // save
             saveUserData(user: user)
+            loadUserData()
         }
         
         // disable editing mode
         editingMode = false
         updateEditingMode()
-        saveUserData(user: user)
 
     }
     
@@ -135,7 +135,7 @@ class ProfileTableViewController: UITableViewController {
     
     private func showSaveButton() {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(editUserData))
-//        TODO: add a nav bar
+        
         navigationItem.rightBarButtonItem = editingMode ? saveButton : nil
     }
     
@@ -143,14 +143,17 @@ class ProfileTableViewController: UITableViewController {
     // TODO: add default value for those switch
     private func loadUserData() {
         let currentUser = FUser.currentUser()!
+        FileStorage.downloadImage(imageUrl: currentUser.avatarLink) { (image) in
+            
+        }
         usernameLabel.text = currentUser.username
         cityCountryLabel.text = currentUser.country + ", " + currentUser.city
         aboutMeTextView.text = currentUser.about != "" ? currentUser.about : "A little bit about me..."
         cityTextField.text = currentUser.city
         countryTextField.text = currentUser.country
         // TODO: set avatar picture
-        avatarImageView.image = nil
-        
+        avatarImageView.image = UIImage(named: "avatar")?.circleMasked
+        avatarImageView.image = currentUser.avatar?.circleMasked
     }
     
     
@@ -202,6 +205,25 @@ class ProfileTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    // MARK: Upload images
+    private func uploadAvatar(_ image: UIImage, completion: @escaping (_ avatarLink: String?)-> Void) {
+        
+        ProgressHUD.show()
+        
+        let fileDirectory = "Avatars/_" + FUser.currentId() + ".jpg"
+        
+        FileStorage.uploadImage(image, directory: fileDirectory) { (avatarLink) in
+            
+            ProgressHUD.dismiss()
+            FileStorage.saveImageLocally(imageData: image.jpegData(compressionQuality: 0.8)! as NSData, fileName: FUser.currentId())
+            completion(avatarLink)
+        }
+        
+    }
+
+    
+    
+    
     // MARK: Gallery
     private func showGallery(forAvatar: Bool) {
      
@@ -217,6 +239,8 @@ class ProfileTableViewController: UITableViewController {
     }
 
 }
+
+//MARK: extensions gallery
 
 
 extension ProfileTableViewController: GalleryControllerDelegate {

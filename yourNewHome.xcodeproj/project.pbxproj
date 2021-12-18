@@ -22,6 +22,7 @@
 		9860D9CF276D9E1800AB1A3E /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9CE276D9E1800AB1A3E /* FCollectionReference.swift */; };
 		9860D9D1276DA7D200AB1A3E /* FirebaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9D0276DA7D200AB1A3E /* FirebaseListener.swift */; };
 		9860D9D5276DF02C00AB1A3E /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9D4276DF02C00AB1A3E /* FileStorage.swift */; };
+		9860D9D7276DF44B00AB1A3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9860D9D6276DF44B00AB1A3E /* Extensions.swift */; };
 		98632F75275AB6E5003133F6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98632F74275AB6E5003133F6 /* FeedViewController.swift */; };
 		98632F77275AC400003133F6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98632F76275AC400003133F6 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		9860D9CE276D9E1800AB1A3E /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
 		9860D9D0276DA7D200AB1A3E /* FirebaseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseListener.swift; sourceTree = "<group>"; };
 		9860D9D4276DF02C00AB1A3E /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		9860D9D6276DF44B00AB1A3E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		98632F74275AB6E5003133F6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		98632F76275AC400003133F6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F3E8F0AB04551B0706F6EA35 /* Pods-yourNewHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yourNewHome.debug.xcconfig"; path = "Target Support Files/Pods-yourNewHome/Pods-yourNewHome.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9860D9CA276D742E00AB1A3E /* Constants.swift */,
+				9860D9D6276DF44B00AB1A3E /* Extensions.swift */,
 				9860D9CE276D9E1800AB1A3E /* FCollectionReference.swift */,
 				9860D9D0276DA7D200AB1A3E /* FirebaseListener.swift */,
 			);
@@ -261,6 +264,7 @@
 				9860D9D5276DF02C00AB1A3E /* FileStorage.swift in Sources */,
 				37331A802751A9100060F7FE /* ViewController.swift in Sources */,
 				98632F75275AB6E5003133F6 /* FeedViewController.swift in Sources */,
+				9860D9D7276DF44B00AB1A3E /* Extensions.swift in Sources */,
 				37331A7C2751A9100060F7FE /* AppDelegate.swift in Sources */,
 				37331A7E2751A9100060F7FE /* SceneDelegate.swift in Sources */,
 				9860D9CB276D742E00AB1A3E /* Constants.swift in Sources */,
