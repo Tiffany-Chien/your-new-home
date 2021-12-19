@@ -88,7 +88,19 @@
                         <viewLayoutGuide key="safeArea" id="Xpf-1I-tXf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="294-eH-EIk"/>
+                    <navigationItem key="navigationItem" id="294-eH-EIk">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="dbZ-Xs-K5o">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="haa-kh-Mza">
+                                <rect key="frame" x="19.999999999999993" y="5" width="100.33333333333331" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="homekit" catalog="system" title="Home"/>
+                            </button>
+                            <connections>
+                                <segue destination="ra9-In-MBU" kind="presentation" id="w0j-Rj-g3J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqV-Fc-bvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +294,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
                                                     <rect key="frame" x="20" y="11.666666666666664" width="374" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="EwU-E2-qCU"/>
@@ -296,6 +308,7 @@
                                             <constraints>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="leading" secondItem="6Jm-aO-HYW" secondAttribute="leadingMargin" id="1q3-nk-jGq"/>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="centerY" secondItem="6Jm-aO-HYW" secondAttribute="centerY" id="3GD-bI-RUu"/>
+                                                <constraint firstItem="Q1g-kH-t1i" firstAttribute="centerY" secondItem="6Jm-aO-HYW" secondAttribute="centerY" id="IWX-ws-gwq"/>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="trailing" secondItem="6Jm-aO-HYW" secondAttribute="trailingMargin" id="L8G-v2-SeJ"/>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="centerX" secondItem="6Jm-aO-HYW" secondAttribute="centerX" id="SWf-6u-5MF"/>
                                             </constraints>
@@ -408,7 +421,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="My Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-mt-nJA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-mt-nJA">
                                                     <rect key="frame" x="150" y="11.666666666666664" width="114.33333333333331" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -435,13 +448,13 @@
                                                     <rect key="frame" x="19" y="4" width="181" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7k-Tz-nhR">
                                                     <rect key="frame" x="218" y="4" width="181" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -523,7 +536,7 @@
                                 <rect key="frame" x="87" y="454" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hP-S6-7OG">
                                 <rect key="frame" x="87" y="240" width="45" height="21"/>
@@ -591,12 +604,16 @@
             <point key="canvasLocation" x="2658" y="1221"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bCk-t3-pnT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="appLogo" width="736" height="549"/>
         <image name="avatar" width="184" height="184"/>
         <image name="camera" width="60" height="60"/>
         <image name="edit" width="80" height="80"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="pawprint.fill" catalog="system" width="128" height="113"/>
         <image name="settings" width="80" height="80"/>
         <systemColor name="labelColor">

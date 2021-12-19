@@ -26,8 +26,8 @@ class CardViewController: UIViewController {
         super.viewDidLoad()
         
 //        let user = FUser.currentUser()
-        let cardModel = UserCardModel(name: "Cat", age: "Baby", breed: "American", image: UIImage(named: "avatar"))
-        initialCardModels.append(cardModel)
+//        let cardModel = UserCardModel(name: "Cat", age: "Baby", breed: "American", image: UIImage(named: "avatar"))
+//        initialCardModels.append(cardModel)
         // hard code data no internet ;(
         loadDataHelper(petName: "Coco Puff", petAge: "Baby", petBreed: "Dilute Tortoiseshell", petImage: "pet01")
         loadDataHelper(petName: "Kershaw", petAge: "Adult", petBreed: "Terrier", petImage: "pet02")
