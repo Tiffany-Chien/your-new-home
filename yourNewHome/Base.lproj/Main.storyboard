@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4mR-95-M5m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -115,9 +115,9 @@
         <!--Profile-->
         <scene sceneID="bxK-Hz-SiP">
             <objects>
-                <tableViewController title="Profile" id="ra9-In-MBU" customClass="ProfileTableViewController" customModule="yourNewHome" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Profile" modalPresentationStyle="fullScreen" id="ra9-In-MBU" customClass="ProfileTableViewController" customModule="yourNewHome" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1IZ-z4-296">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
@@ -282,7 +282,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to find ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1g-kH-t1i">
                                                     <rect key="frame" x="20" y="11.666666666666664" width="374" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="EwU-E2-qCU"/>
@@ -296,6 +296,7 @@
                                             <constraints>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="leading" secondItem="6Jm-aO-HYW" secondAttribute="leadingMargin" id="1q3-nk-jGq"/>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="centerY" secondItem="6Jm-aO-HYW" secondAttribute="centerY" id="3GD-bI-RUu"/>
+                                                <constraint firstItem="Q1g-kH-t1i" firstAttribute="centerY" secondItem="6Jm-aO-HYW" secondAttribute="centerY" id="IWX-ws-gwq"/>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="trailing" secondItem="6Jm-aO-HYW" secondAttribute="trailingMargin" id="L8G-v2-SeJ"/>
                                                 <constraint firstItem="Q1g-kH-t1i" firstAttribute="centerX" secondItem="6Jm-aO-HYW" secondAttribute="centerX" id="SWf-6u-5MF"/>
                                             </constraints>
@@ -419,6 +420,7 @@
                                             <constraints>
                                                 <constraint firstItem="wSP-mt-nJA" firstAttribute="centerX" secondItem="lC7-1w-cb9" secondAttribute="centerX" id="11n-rN-A2h"/>
                                                 <constraint firstItem="wSP-mt-nJA" firstAttribute="centerY" secondItem="lC7-1w-cb9" secondAttribute="centerY" id="TtM-lZ-FcK"/>
+                                                <constraint firstItem="wSP-mt-nJA" firstAttribute="centerY" secondItem="lC7-1w-cb9" secondAttribute="centerY" id="rDS-Od-7no"/>
                                                 <constraint firstItem="wSP-mt-nJA" firstAttribute="centerX" secondItem="lC7-1w-cb9" secondAttribute="centerX" id="tav-9R-nJA"/>
                                                 <constraint firstItem="wSP-mt-nJA" firstAttribute="centerY" secondItem="lC7-1w-cb9" secondAttribute="centerY" id="upm-nm-0VN"/>
                                             </constraints>
@@ -435,13 +437,13 @@
                                                     <rect key="frame" x="19" y="4" width="181" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7k-Tz-nhR">
                                                     <rect key="frame" x="218" y="4" width="181" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="address-level1"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -457,7 +459,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="lca-o3-1Nv"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="aboutMeTextView" destination="oZh-iU-yta" id="Evy-pF-PGV"/>
                         <outlet property="aboutMeView" destination="8Hh-RE-OLi" id="IVn-GO-Ef9"/>
@@ -471,7 +473,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIG-bG-FAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3500.0000000000005" y="397.76785714285711"/>
+            <point key="canvasLocation" x="3738" y="344"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Ci9-io-v16">
@@ -523,7 +525,7 @@
                                 <rect key="frame" x="87" y="454" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hP-S6-7OG">
                                 <rect key="frame" x="87" y="240" width="45" height="21"/>
