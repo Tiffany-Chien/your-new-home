@@ -32,13 +32,13 @@ Our goal is to enable potential owners to find the right pet, giving each shelte
 - [x] User can login 
 - [x] User can easily sign-in multiple ways
 - [x] User is automatically signed-in after signup
-- [ ] User can select the attributes and characteristics of pets 
-- [ ] User can add pets to intereseted/not interested by swiping left and right
+- [x] User can select the attributes and characteristics of pets 
+- [x] User can add pets to intereseted/not interested by swiping left and right
 - [ ] User can select the pets 
 
 **Optional Nice-to-have Stories**
 
-- [ ]Recommending system for pets 
+- [ ] Recommending system for pets 
 - [ ] Rescue organization search
 - [ ] Leave comments about a pet
 - [ ] Leaderboard for each pets according to the number of likes
@@ -161,3 +161,6 @@ Week 11 Demo:
 Week 12 Demo:
 
 <img src='/Demo/completedLogin.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
+Week 13 Demo:
+
+<img src='/Demo/ProjectFinal.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
