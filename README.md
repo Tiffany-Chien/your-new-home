@@ -16,19 +16,3 @@ Our goal is to enable potential owners to find the right pet, giving each shelte
 ## Wireframes
 
 ![Demo](https://github.com/jhong97/YourNewHome/blob/master/Demo/wireframes.png)
-
-
-Week 10 Demo:
-Link to GIF (https://imgur.com/a/QIaAQMU.gif)
-
-Week 11 Demo:
-
-
-<img src='/Demo/userLogin.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
-
-Week 12 Demo:
-
-<img src='/Demo/completedLogin.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
-Week 13 Demo:
-
-<img src='/Demo/ProjectFinal.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
